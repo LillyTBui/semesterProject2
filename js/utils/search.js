@@ -41,7 +41,7 @@ async function searchProducts(input, targetElement) {
       searchCard(filtered, targetElement);
     }
   } catch (error) {
-    displayMessage("error", error, targetElement);
+    displayMessage("error", "No products found", targetElement);
   }
 }
 

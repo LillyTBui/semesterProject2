@@ -17,120 +17,124 @@
     ></script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand navbar__brand" href="index.html"
-        ><img
-          src="images/logo.png"
-          alt="logo of the brand"
-          class="navbar__logo"
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-dark navbar-toggler-icon navbar__toggler"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link navbar__link" aria-current="page" href="new.html"
-              >New</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link navbar__link navbar__link--active"
-              href="women.html"
-              >Women</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar__link" href="men.html">Men</a>
-          </li>
-        </ul>
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand navbar__brand" href="index.html"
+          ><img
+            src="images/logo.png"
+            alt="logo of the brand"
+            class="navbar__logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-dark navbar-toggler-icon navbar__toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link navbar__link"
+                aria-current="page"
+                href="new.html"
+                >New</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navbar__link navbar__link--active"
+                href="women.html"
+                >Women</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar__link" href="men.html">Men</a>
+            </li>
+          </ul>
 
-        <div class="d-flex align-items-center">
-          <a href="login.html"
-            ><i class="fa-regular fa-user navbar__icon"></i
-          ></a>
-          <a href="favorites.html"
-            ><i class="fa-regular fa-heart navbar__icon"></i
-          ></a>
-          <a href="shopping-bag.html"
-            ><i class="fa-solid fa-cart-shopping navbar__icon"></i
-          ></a>
+          <div class="d-flex align-items-center">
+            <a href="login.html"
+              ><i class="fa-regular fa-user navbar__icon"></i
+            ></a>
+            <a href="favorites.html"
+              ><i class="fa-regular fa-heart navbar__icon"></i
+            ></a>
+            <a href="shopping-bag.html"
+              ><i class="fa-solid fa-cart-shopping navbar__icon"></i
+            ></a>
+          </div>
+          <form class="d-flex navbar__form">
+            <input
+              class="form-control navbar__form-input"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="search-input-nav"
+            />
+          </form>
         </div>
-        <form class="d-flex navbar__form">
-          <input
-            class="form-control navbar__form-input"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            id="search-input-nav"
-          />
-        </form>
+      </div>
+    </nav>
+    <div class="nav-search">
+      <div class="nav-search__header">
+        <h5 class="nav-search__title">Products</h5>
+        <span>
+          <i class="fa-solid fa-xmark nav-search__icon"></i>
+        </span>
+      </div>
+      <div class="nav-search__products-container"></div>
+    </div>
+    <!--Product details-->
+    <div class="container product-detail">
+      <ul class="productHeader__breadcrumbs">
+        <li>
+          <a
+            href="index.html"
+            class="productHeader__breadcrumbs-link product-detail__link"
+            >Home</a
+          >
+        </li>
+        <li class="productHeader__breadcrumbs-separator">/</li>
+        <li>
+          <a
+            href="new.html"
+            class="productHeader__breadcrumbs-link product-detail__link"
+            >New Arrivals</a
+          >
+        </li>
+        <li class="productHeader__breadcrumbs-separator">/</li>
+        <li class="productHeader__breadcrumbs__product">Red shoe</li>
+      </ul>
+      <div class="row">
+        <div class="col-12 col-md-7 col-lg-7 detail-container__img"></div>
+        <div
+          class="col-12 col-md-5 col-lg-5 product-detail__description detail-container"
+        >
+          <div class="product-detail__size">
+            <h4 class="product-detail__size-title">Size</h4>
+            <button class="product-detail__size-item">7</button>
+            <button class="product-detail__size-item">8</button>
+            <button class="product-detail__size-item">9</button>
+          </div>
+          <button type="button" class="product-detail__favorite">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <button type="button" class="product-detail__add-to-cart">
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
-  </nav>
-  <div class="nav-search">
-    <div class="nav-search__header">
-      <h5 class="nav-search__title">Products</h5>
-      <span>
-        <i class="fa-solid fa-xmark nav-search__icon"></i>
-      </span>
-    </div>
-    <div class="nav-search__products-container"></div>
+    <!--Product details-->
   </div>
 
-  <!--Product details-->
-  <div class="container product-detail">
-    <ul class="productHeader__breadcrumbs">
-      <li>
-        <a
-          href="index.html"
-          class="productHeader__breadcrumbs-link product-detail__link"
-          >Home</a
-        >
-      </li>
-      <li class="productHeader__breadcrumbs-separator">/</li>
-      <li>
-        <a
-          href="new.html"
-          class="productHeader__breadcrumbs-link product-detail__link"
-          >New Arrivals</a
-        >
-      </li>
-      <li class="productHeader__breadcrumbs-separator">/</li>
-      <li class="productHeader__breadcrumbs__product">Red shoe</li>
-    </ul>
-    <div class="row">
-      <div class="col-12 col-md-7 col-lg-7 detail-container__img"></div>
-      <div
-        class="col-12 col-md-5 col-lg-5 product-detail__description detail-container"
-      >
-        <div class="product-detail__size">
-          <h4 class="product-detail__size-title">Size</h4>
-          <button class="product-detail__size-item">7</button>
-          <button class="product-detail__size-item">8</button>
-          <button class="product-detail__size-item">9</button>
-        </div>
-        <button type="button" class="product-detail__favorite">
-          <i class="fa-regular fa-heart"></i>
-        </button>
-        <button type="button" class="product-detail__add-to-cart">
-          Add to cart
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!--Product details-->
   <!--Carousel-->
   <section class="product-carousel">
     <div class="container">

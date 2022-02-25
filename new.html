@@ -17,290 +17,294 @@
     ></script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand navbar__brand" href="index.html"
-        ><img
-          src="images/logo.png"
-          alt="logo of the brand"
-          class="navbar__logo"
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-dark navbar-toggler-icon navbar__toggler"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a
-              class="nav-link navbar__link navbar__link--active"
-              aria-current="page"
-              href="new.html"
-              >New</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar__link" href="women.html">Women</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar__link" href="men.html">Men</a>
-          </li>
-        </ul>
-
-        <div class="d-flex align-items-center">
-          <a href="login.html"
-            ><i class="fa-regular fa-user navbar__icon"></i
-          ></a>
-          <a href="favorites.html"
-            ><i class="fa-regular fa-heart navbar__icon"></i
-          ></a>
-          <a href="shopping-bag.html"
-            ><i class="fa-solid fa-cart-shopping navbar__icon"></i
-          ></a>
-        </div>
-        <form class="d-flex navbar__form">
-          <input
-            class="form-control navbar__form-input"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            id="search-input-nav"
-          />
-        </form>
-      </div>
-    </div>
-  </nav>
-  <div class="nav-search">
-    <div class="nav-search__header">
-      <h5 class="nav-search__title">Products</h5>
-      <span>
-        <i class="fa-solid fa-xmark nav-search__icon"></i>
-      </span>
-    </div>
-    <div class="nav-search__products-container"></div>
-  </div>
-  <div class="container productHeader">
-    <h1>New arrivals</h1>
-    <ul class="productHeader__breadcrumbs">
-      <li>
-        <a href="index.html" class="productHeader__breadcrumbs-link">Home</a>
-      </li>
-      <li class="productHeader__breadcrumbs-separator">/</li>
-      <li>
-        <a href="new.html" class="productHeader__breadcrumbs-link"
-          >New Arrivals</a
+  <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand navbar__brand" href="index.html"
+          ><img
+            src="images/logo.png"
+            alt="logo of the brand"
+            class="navbar__logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-      </li>
-    </ul>
-  </div>
-  <section class="sortby">
-    <p class="sortby__title">Sort By:</p>
-    <select
-      class="form-select sortby__select"
-      aria-label="Default select example"
-    >
-      <option selected value="price">Price</option>
-      <option value="newest">Newest</option>
-    </select>
-  </section>
-  <div class="container products">
-    <div class="row">
-      <div class="col-12 col-sm-3 products__filter">
-        <input
-          class="form-control products__filter-search"
-          type="text"
-          placeholder="Search"
-          aria-label="Search box"
-          id="search-input"
-        />
-        <div class="accordion accordion-flush" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
+          <span class="navbar-dark navbar-toggler-icon navbar__toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link navbar__link navbar__link--active"
+                aria-current="page"
+                href="new.html"
+                >New</a
               >
-                Gender
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              class="accordion-collapse collapse show"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="men"
-                    id="checkbox-men"
-                  />
-                  <label class="form-check-label" for="checkbox-men">
-                    Men
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="women"
-                    id="checkbox-women"
-                  />
-                  <label class="form-check-label" for="checkbox-women">
-                    Women
-                  </label>
-                </div>
-              </div>
-            </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar__link" href="women.html">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar__link" href="men.html">Men</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center">
+            <a href="login.html"
+              ><i class="fa-regular fa-user navbar__icon"></i
+            ></a>
+            <a href="favorites.html"
+              ><i class="fa-regular fa-heart navbar__icon"></i
+            ></a>
+            <a href="shopping-bag.html"
+              ><i class="fa-solid fa-cart-shopping navbar__icon"></i
+            ></a>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Size
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="xs"
-                    id="size-xs"
-                  />
-                  <label class="form-check-label" for="size-xs"> XS </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="s"
-                    id="size-s"
-                  />
-                  <label class="form-check-label" for="size-s"> S </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="m"
-                    id="size-m"
-                  />
-                  <label class="form-check-label" for="size-m"> M </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="L"
-                    id="size-l"
-                  />
-                  <label class="form-check-label" for="size-l"> L </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="xl"
-                    id="size-xl"
-                  />
-                  <label class="form-check-label" for="size-xl"> XL </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                Colors
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample"
-            >
-              <div class="accordion-body">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="black"
-                    id="color-black"
-                  />
-                  <label class="form-check-label" for="size-black">
-                    Black
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="blue"
-                    id="color-blue"
-                  />
-                  <label class="form-check-label" for="size-blue"> Blue </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="red"
-                    id="color-red"
-                  />
-                  <label class="form-check-label" for="size-red"> Red </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="white"
-                    id="color-white"
-                  />
-                  <label class="form-check-label" for="size-white">
-                    White
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <form class="d-flex navbar__form">
+            <input
+              class="form-control navbar__form-input"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="search-input-nav"
+            />
+          </form>
         </div>
-        <button class="btn-reset">Reset</button>
       </div>
-      <div class="col-12 col-sm-9 product-container"></div>
+    </nav>
+    <div class="nav-search">
+      <div class="nav-search__header">
+        <h5 class="nav-search__title">Products</h5>
+        <span>
+          <i class="fa-solid fa-xmark nav-search__icon"></i>
+        </span>
+      </div>
+      <div class="nav-search__products-container"></div>
+    </div>
+    <div class="container productHeader">
+      <h1>New arrivals</h1>
+      <ul class="productHeader__breadcrumbs">
+        <li>
+          <a href="index.html" class="productHeader__breadcrumbs-link">Home</a>
+        </li>
+        <li class="productHeader__breadcrumbs-separator">/</li>
+        <li>
+          <a href="new.html" class="productHeader__breadcrumbs-link"
+            >New Arrivals</a
+          >
+        </li>
+      </ul>
+    </div>
+    <section class="sortby">
+      <p class="sortby__title">Sort By:</p>
+      <select
+        class="form-select sortby__select"
+        aria-label="Default select example"
+      >
+        <option selected value="price">Price</option>
+        <option value="newest">Newest</option>
+      </select>
+    </section>
+    <div class="container products">
+      <div class="row">
+        <div class="col-12 col-sm-3 products__filter">
+          <input
+            class="form-control products__filter-search"
+            type="text"
+            placeholder="Search"
+            aria-label="Search box"
+            id="search-input"
+          />
+          <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Gender
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="men"
+                      id="checkbox-men"
+                    />
+                    <label class="form-check-label" for="checkbox-men">
+                      Men
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="women"
+                      id="checkbox-women"
+                    />
+                    <label class="form-check-label" for="checkbox-women">
+                      Women
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Size
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="xs"
+                      id="size-xs"
+                    />
+                    <label class="form-check-label" for="size-xs"> XS </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="s"
+                      id="size-s"
+                    />
+                    <label class="form-check-label" for="size-s"> S </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="m"
+                      id="size-m"
+                    />
+                    <label class="form-check-label" for="size-m"> M </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="L"
+                      id="size-l"
+                    />
+                    <label class="form-check-label" for="size-l"> L </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="xl"
+                      id="size-xl"
+                    />
+                    <label class="form-check-label" for="size-xl"> XL </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Colors
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="black"
+                      id="color-black"
+                    />
+                    <label class="form-check-label" for="size-black">
+                      Black
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="blue"
+                      id="color-blue"
+                    />
+                    <label class="form-check-label" for="size-blue">
+                      Blue
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="red"
+                      id="color-red"
+                    />
+                    <label class="form-check-label" for="size-red"> Red </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="white"
+                      id="color-white"
+                    />
+                    <label class="form-check-label" for="size-white">
+                      White
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-reset">Reset</button>
+        </div>
+        <div class="col-12 col-sm-9 product-container"></div>
+      </div>
     </div>
   </div>
 

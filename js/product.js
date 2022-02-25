@@ -14,8 +14,7 @@ const productsUrl = baseUrl + "/products";
     makeCard(products, ".product-container");
     toggle(products);
   } catch (error) {
-    console.log(error);
-    displayMessage("error", error, ".product-container");
+    displayMessage("error", "No products found", ".product-container");
   }
 })();
 

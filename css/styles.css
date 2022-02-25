@@ -548,3 +548,35 @@ a {
   color: var(--secondary-colour);
   font-weight: 100;
 }
+
+/* favorite */
+
+.favorite-container {
+  margin-top: 2rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--btn-red);
+  background-color: #c8172c5d;
+  border: 1px solid var(--btn-red);
+  padding: 1rem;
+  max-height: 3rem;
+  margin-top: 1rem;
+}
