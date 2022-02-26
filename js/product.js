@@ -5,18 +5,40 @@ import { searchProducts } from "./utils/search.js";
 import toggle from "./utils/toggle.js";
 
 const productsUrl = baseUrl + "/products";
+const sortBy = document.querySelector(".sortby__select");
+const sortByValue = sortBy.value;
 
-(async function () {
+displayProducts(sortByValue);
+
+sortBy.addEventListener("change", sortProducts);
+
+function sortProducts() {
+  const value = sortBy.value;
+  displayProducts(value);
+}
+
+async function displayProducts(value) {
   try {
     const response = await fetch(productsUrl);
     const products = await response.json();
+    let sortArray;
 
-    makeCard(products, ".product-container");
-    toggle(products);
+    if (value === "highest") {
+      sortArray = products.sort(function (productA, productB) {
+        return productB.price - productA.price;
+      });
+    } else {
+      sortArray = products.sort(function (productA, productB) {
+        return productA.price - productB.price;
+      });
+    }
+
+    makeCard(sortArray, ".product-container");
+    toggle(sortArray);
   } catch (error) {
     displayMessage("error", "No products found", ".product-container");
   }
-})();
+}
 
 /* search products */
 

@@ -15,21 +15,28 @@ export default function toggle(products) {
     const currentFavs = getFromStorage(favoriteKey);
 
     const checkProduct = currentFavs.find(function (product) {
-      return product.id.toString() == id.toString();
+      return parseInt(product.id) == id;
     });
 
     if (products.length > 0 && !checkProduct) {
       const currentProduct = products.find((product) => product.id == id);
-      currentFavs.push(currentProduct);
-      saveToStorage(favoriteKey, currentFavs);
+      if (currentProduct !== null) {
+        currentFavs.push(currentProduct);
+        saveToStorage(favoriteKey, currentFavs);
+      }
     } else if (checkProduct === undefined) {
-      currentFavs.push(products);
-      saveToStorage(favoriteKey, currentFavs);
+      if (products !== null) {
+        currentFavs.push(products);
+        saveToStorage(favoriteKey, currentFavs);
+        console.log(getFromStorage(favoriteKey));
+      }
     } else {
       const newList = currentFavs.filter(
         (product) => product.id.toString() !== id
       );
-      saveToStorage(favoriteKey, newList);
+      if (newList !== null) {
+        saveToStorage(favoriteKey, newList);
+      }
     }
   }
 }

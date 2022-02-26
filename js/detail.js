@@ -3,7 +3,7 @@ import displayMessage from "./components/displayMessage.js";
 import makeCard from "./components/makeCard.js";
 import createCarousel from "./components/carousel.js";
 import { saveToStorage, getFromStorage } from "./utils/storage.js";
-import { similarKey, favoriteKey } from "./settings/key.js";
+import { similarKey, favoriteKey, cartKey } from "./settings/key.js";
 import toggle from "./utils/toggle.js";
 
 const queryString = document.location.search;
@@ -18,7 +18,7 @@ if (!id) {
 
 const productUrl = baseUrl + "/products/" + id;
 const favouriteProducts = getFromStorage(favoriteKey);
-console.log(favouriteProducts);
+const cartArray = getFromStorage(cartKey);
 
 (async function () {
   try {
@@ -34,15 +34,26 @@ console.log(favouriteProducts);
     );
 
     let cssClass = "fa-regular";
+    let cartCssClass = "btn-add";
+    let cartText = "Add to cart";
 
     const productExist = favouriteProducts.find(
       (fav) => parseInt(fav.id) === details.id
     );
 
-    console.log(productExist);
+    const productCart = cartArray.find(
+      (product) => parseInt(product.id) === details.id
+    );
+
+    if (productCart) {
+      cartText = "Remove from cart";
+      cartCssClass = "btn-remove";
+    }
+
     if (productExist) {
       cssClass = "fa-solid";
     }
+
     breadcrumb.innerHTML = `${details.title}`;
     imageContainer.innerHTML = `<div class="detail-img-container">
                                         <img
@@ -59,11 +70,40 @@ console.log(favouriteProducts);
         <button type="button" class="product-detail__favorite">
           <i class="${cssClass} fa-heart" data-id="${details.id}"></i>
         </button>
-        <button type="button" class="product-detail__add-to-cart">
-          Add to cart
+        <button type="button" class="product-detail__add-to-cart ${cartCssClass}" data-id="${details.id}">
+          ${cartText}
         </button>
     `;
-    toggle(details);
+
+    const cartBtn = document.querySelectorAll(".product-detail__add-to-cart");
+
+    cartBtn.forEach(function (btn) {
+      btn.addEventListener("click", addToCart);
+    });
+
+    function addToCart() {
+      cartBtn[0].classList.toggle("btn-remove");
+      cartBtn[0].classList.toggle("btn-add");
+      const currentCart = getFromStorage(cartKey);
+      const id = this.dataset.id;
+      const productExist = currentCart.find(function (product) {
+        return parseInt(product.id) === parseInt(id);
+      });
+
+      if (productExist === undefined) {
+        cartBtn[0].innerText = "Remove from cart";
+        currentCart.push(details);
+        saveToStorage(cartKey, currentCart);
+      } else {
+        cartBtn[0].innerText = "Add to cart";
+        const removeProduct = currentCart.filter(
+          (product) => parseInt(product.id) !== parseInt(id)
+        );
+        saveToStorage(cartKey, removeProduct);
+      }
+    }
+
+    //toggle(details);
   } catch (error) {
     displayMessage("error", error, ".detail-container");
   }
