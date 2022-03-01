@@ -21,6 +21,7 @@ const url = baseUrl + "/home";
             class="hero__img"
           />`;
   } catch (error) {
+    console.log(error);
     displayMessage("error", error, ".hero");
   }
 })();
@@ -45,6 +46,7 @@ const productsUrl = baseUrl + "/products";
     makeCard(featuredProducts, ".product-carousel__container");
     saveToStorage(maxCard, maxProducts);
   } catch (error) {
+    console.log(error);
     displayMessage("error", error, ".product-carousel__container");
   }
 })();

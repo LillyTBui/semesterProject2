@@ -36,6 +36,7 @@ async function displayProducts(value) {
     makeCard(sortArray, ".product-container");
     toggle(sortArray);
   } catch (error) {
+    console.log(error);
     displayMessage("error", "No products found", ".product-container");
   }
 }

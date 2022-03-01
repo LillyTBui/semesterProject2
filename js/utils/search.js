@@ -2,6 +2,7 @@ import { baseUrl } from "../settings/api.js";
 import searchCard from "../components/searchCard.js";
 import displayMessage from "../components/displayMessage.js";
 import makeCard from "../components/makeCard.js";
+import { getFromStorage, getUsername } from "./storage.js";
 
 const navSearch = document.querySelector("#search-input-nav");
 const navSearch_container = document.querySelector(".nav-search");
@@ -41,8 +42,27 @@ async function searchProducts(input, targetElement) {
       searchCard(filtered, targetElement);
     }
   } catch (error) {
+    console.log(error);
     displayMessage("error", "No products found", targetElement);
   }
 }
 
 export { searchProducts };
+
+/* Log out */
+
+const user = getUsername();
+const btnLogOut = document.querySelector(".navbar__logout");
+
+if (user) {
+  btnLogOut.style.display = "block";
+  btnLogOut.addEventListener("click", logout);
+} else {
+  btnLogOut.style.display = "hidden";
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  location.reload();
+}

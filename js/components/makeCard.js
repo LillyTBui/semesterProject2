@@ -20,12 +20,17 @@ export default function makeCard(products, targetElement) {
         cssClass = "fa-solid";
       }
 
+      // <img
+      //   class="card-img-top"
+      //   src="${baseUrl}${product.image.formats.medium.url}"
+      //   alt="${product.title}"
+      // />;
       container.innerHTML += `
                                       <div class="card carousel-card">
                                        <a href="detail.html?id=${product.id}">
                                         <img
                                            class="card-img-top"
-                                           src="${baseUrl}${product.image.formats.medium.url}"
+                                           src="${product.image_url}"
                                            alt="${product.title}"
                                         />
                                        </a>
@@ -35,7 +40,7 @@ export default function makeCard(products, targetElement) {
                                              ${product.title}
                                            </h5>
                                            <p class="card-text">
-                                             ${product.price}
+                                             $${product.price}
                                             </p>
                                         </div>
                                       </a>

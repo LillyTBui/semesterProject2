@@ -58,7 +58,7 @@ const cartArray = getFromStorage(cartKey);
     imageContainer.innerHTML = `<div class="detail-img-container">
                                         <img
                                           class="detail-img"
-                                          src="http://localhost:1337${details.image.formats.medium.url}"
+                                          src="${details.image_url}"
                                           alt="${details.title}"
                                         /></div>`;
     container.innerHTML = `
@@ -105,6 +105,7 @@ const cartArray = getFromStorage(cartKey);
 
     //toggle(details);
   } catch (error) {
+    console.log(error);
     displayMessage("error", error, ".detail-container");
   }
 })();
@@ -143,6 +144,7 @@ const maxProducts = 4;
     makeCard(productsArray, ".product-carousel__container");
     saveToStorage(similarKey, maxProducts);
   } catch (error) {
+    console.log(error);
     displayMessage("error", error, ".product-carousel__container");
   }
 })();
