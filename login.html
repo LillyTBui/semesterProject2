@@ -154,6 +154,51 @@
           <button class="form__btn add-btn">Add</button>
         </form>
       </div>
+      <div class="delete-products">
+        <h1 class="form__title">Edit/Delete product</h1>
+        <div class="delete-products__message"></div>
+        <form class="form__container delete-products__form">
+          <div class="form__div">
+            <label for="deleteTitle" class="form__label">Title</label>
+            <input id="deleteTitle" class="form__input" />
+            <div class="form__error" id="deleteTitleError">
+              Please enter a valid title
+            </div>
+          </div>
+          <div class="form__div edit-products__div">
+            <label for="edit-price" class="form__label">Price</label>
+            <input id="edit-price" class="form__input" />
+          </div>
+          <div class="form__div edit-products__div">
+            <label for="edit-description" class="form__label"
+              >Description</label
+            >
+            <input id="edit-description" class="form__input" />
+          </div>
+          <div class="form__div edit-products__div">
+            <label for="edit-image" class="form__label"
+              >Upload an image with url</label
+            >
+            <input
+              type="url"
+              id="edit-image"
+              class="form__input"
+              placeholder="https://example.com"
+              pattern="https://.*"
+            />
+            <div class="form__error" id="urlError">
+              Please enter a valid url
+            </div>
+          </div>
+          <div class="form__div edit-products__div">
+            <input type="checkbox" id="edit-featured" />
+            <label for="edit-featured">Featured</label>
+          </div>
+          <div class="delete-container"></div>
+          <div class="edit-container"></div>
+          <button class="form__btn find-btn">Find product</button>
+        </form>
+      </div>
     </div>
 
     <!-- Footer -->

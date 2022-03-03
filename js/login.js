@@ -1,7 +1,10 @@
 import displayMessage from "./components/displayMessage.js";
 import { baseUrl } from "./settings/api.js";
-import { getToken, saveToken, saveUser } from "./utils/storage.js";
+import { saveToken, saveUser } from "./utils/storage.js";
 import { getUsername } from "./utils/storage.js";
+import deleteProduct from "./components/deleteProduct.js";
+import editProduct from "./components/editProduct.js";
+import addProduct from "./components/addProduct.js";
 
 const form = document.querySelector(".form__container");
 const username = document.querySelector("#username");
@@ -72,11 +75,21 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const featured = document.getElementById("featured");
+const deleteProducts = document.querySelector(".delete-products");
+const deleteTitle = document.querySelector("#deleteTitle");
 
 const titleError = document.querySelector("#titleError");
 const priceError = document.querySelector("#priceError");
 const descriptionError = document.querySelector("#descriptionError");
 const urlError = document.querySelector("#urlError");
+const deleteError = document.querySelector("#deleteTitleError");
+
+const editFeatured = document.querySelector("#edit-featured");
+const editImage = document.querySelector("#edit-image");
+const editDescription = document.querySelector("#edit-description");
+const editPrice = document.querySelector("#edit-price");
+
+const findBtn = document.querySelector(".find-btn");
 
 let validTitle;
 let validPrice;
@@ -87,8 +100,68 @@ if (user) {
   loginContainer.style.display = "none";
   welcome.innerHTML = `<h1 class="user-welcome__title">Welcome ${user}!</h1>`;
   addProducts.style.display = "flex";
+  deleteProducts.style.display = "flex";
 
   addForm.addEventListener("submit", validateForm);
+  deleteProducts.addEventListener("submit", deleteButton);
+}
+
+function deleteButton(event) {
+  event.preventDefault();
+  const deleteValue = deleteTitle.value;
+
+  if (deleteValue.trim().length > 1) {
+    findProduct(deleteValue);
+  } else {
+    deleteError.style.display = "block";
+    displayMessage(
+      "warning",
+      "Could not find product",
+      ".delete-products__message"
+    );
+  }
+}
+
+async function findProduct(title) {
+  const url = baseUrl + "/products";
+  try {
+    const response = await fetch(url);
+    const products = await response.json();
+
+    const productExists = products.filter(
+      (product) => product.title.toLowerCase() === title.toLowerCase()
+    );
+
+    if (productExists) {
+      displayMessage("success", "Found product", ".delete-products__message");
+      deleteError.style.display = "none";
+
+      editPrice.value = productExists[0].price;
+      editDescription.value = productExists[0].description;
+      editImage.value = productExists[0].image_url;
+      editFeatured.checked = productExists[0].featured;
+
+      const editContainer = document.querySelectorAll(".edit-products__div");
+
+      editContainer.forEach(function (div) {
+        div.style.display = "block";
+      });
+
+      findBtn.style.display = "none";
+
+      const id = productExists[0].id;
+      deleteProduct(id);
+      editProduct(id);
+    }
+  } catch (error) {
+    console.log(error);
+    deleteError.style.display = "block";
+    displayMessage(
+      "warning",
+      "Could not find product",
+      ".delete-products__message"
+    );
+  }
 }
 
 function validateForm(event) {
@@ -142,49 +215,5 @@ function validateForm(event) {
       "Please fill in all input fields",
       ".add-products__message"
     );
-  }
-}
-
-async function addProduct(title, price, description, url, featured) {
-  const productUrl = baseUrl + "/products";
-
-  const data = JSON.stringify({
-    title: title,
-    price: price,
-    description: description,
-    image_url: url,
-    featured: featured,
-  });
-
-  const token = getToken();
-
-  const options = {
-    method: "POST",
-    body: data,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  try {
-    const response = await fetch(productUrl, options);
-    const json = await response.json();
-
-    if (json.created_at) {
-      displayMessage(
-        "success",
-        "Product added sucessfully",
-        ".add-products__message"
-      );
-      addForm.reset();
-    }
-
-    if (json.error) {
-      displayMessage("error", json.message, ".add-products__message");
-    }
-  } catch (error) {
-    console.log(error);
-    displayMessage("error", "An error occured", ".add-products__message");
   }
 }

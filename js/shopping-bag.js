@@ -36,7 +36,7 @@ function showCart() {
             <td>
               <img
                class="shopping-cart__img"
-                                           src="${baseUrl}${product.image.formats.medium.url}"
+                                           src="${product.image_url}"
                                            alt="${product.title}"
               />
             </td>
