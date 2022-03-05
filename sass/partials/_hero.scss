@@ -1,0 +1,90 @@
+.hero {
+  max-width: 100%;
+  margin-bottom: 4rem;
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__col:nth-of-type(1) {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  &__col {
+    padding: 0px;
+  }
+
+  &__col:nth-of-type(2) {
+    background-image: url(../images/concrete-wall-2.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__col-text {
+    padding: 2rem;
+  }
+
+  &__col-text h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  &__col-text h4 {
+    font-size: 1em;
+  }
+
+  &__col-text p {
+    margin: 2rem 0rem;
+    font-size: 1em;
+  }
+
+  &__col:nth-of-type(3) {
+    display: none;
+  }
+
+  &__col-btn {
+    background-color: getColour(primary);
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    text-decoration: none;
+    color: getColour(secondary);
+  }
+
+  &__col-btn:hover {
+    color: getColour(primary);
+    background-color: transparent;
+    border: 2px solid getColour(primary);
+  }
+
+  @media (min-width: 576px) {
+    &__col-text p {
+      margin: 1rem 0rem;
+    }
+
+    &__col-text h1 {
+      font-size: 2.5vw;
+    }
+
+    &__col-btn,
+    &__col-text p,
+    &__col-text h4 {
+      font-size: 1.7vw;
+    }
+
+    &__col:nth-of-type(3) {
+      display: block;
+    }
+  }
+
+  @media (min-width: 610px) {
+    &__col-text p {
+      margin: 2rem 0rem;
+    }
+  }
+}

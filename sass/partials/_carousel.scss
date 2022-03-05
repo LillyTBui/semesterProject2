@@ -1,0 +1,37 @@
+.product-carousel {
+  margin-bottom: 2rem;
+
+  &__title {
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  &__title-hero {
+    text-align: left;
+  }
+
+  &__viewport-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__viewport {
+    overflow: hidden;
+    margin: 0px auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 10px auto;
+  }
+
+  &__icon {
+    background-color: #c7c7c7;
+    padding: 1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+}

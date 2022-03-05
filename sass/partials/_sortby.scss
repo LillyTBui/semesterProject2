@@ -1,0 +1,21 @@
+.sortby {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  border: 1px solid getColour(btn-gray);
+
+  &__select {
+    max-width: 200px;
+    border: none;
+    padding: 0px;
+  }
+
+  &__title {
+    margin: 0px;
+    margin-right: 0.5rem;
+    color: getColour(btn-gray);
+    border-left: 1px solid getColour(btn-gray);
+    padding: 0.5rem;
+  }
+}

@@ -1,7 +1,7 @@
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./components/displayMessage.js";
 import makeCard from "./components/makeCard.js";
-import { searchProducts } from "./utils/search.js";
+import { searchProducts } from "./utils/searchProducts.js";
 import toggle from "./utils/toggle.js";
 
 const productsUrl = baseUrl + "/products";

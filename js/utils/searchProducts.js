@@ -2,7 +2,8 @@ import { baseUrl } from "../settings/api.js";
 import searchCard from "../components/searchCard.js";
 import displayMessage from "../components/displayMessage.js";
 import makeCard from "../components/makeCard.js";
-import { getFromStorage, getUsername } from "./storage.js";
+import { getUsername } from "./storage.js";
+import toggle from "./toggle.js";
 
 const navSearch = document.querySelector("#search-input-nav");
 const navSearch_container = document.querySelector(".nav-search");
@@ -38,6 +39,7 @@ async function searchProducts(input, targetElement) {
 
     if (targetElement == ".product-container") {
       makeCard(filtered, targetElement);
+      toggle(filtered);
     } else if (targetElement == ".nav-search__products-container") {
       searchCard(filtered, targetElement);
     }

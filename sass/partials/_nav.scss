@@ -1,0 +1,118 @@
+.navbar {
+  background-color: getColour(primary) !important;
+  position: relative;
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__brand {
+    padding-top: 0px;
+  }
+
+  &__link {
+    color: getColour(secondary) !important;
+    text-transform: uppercase;
+  }
+
+  &__link--active {
+    text-decoration: underline;
+  }
+
+  &__toggler {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  &__icon {
+    color: getColour(secondary);
+    padding: 0.5rem 0.3rem;
+  }
+
+  &__form-input {
+    border-radius: 0px;
+  }
+
+  &__form-input,
+  &__form-input:focus,
+  &__form-input::placeholder {
+    background-color: getColour(primary);
+    color: getColour(secondary);
+    font-weight: 200;
+  }
+
+  &__logout {
+    border: none;
+    margin-right: 0.5rem;
+    background-color: getColour(btn-red);
+    color: getColour(secondary);
+    text-transform: uppercase;
+    display: none;
+  }
+
+  &__form {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    &__form {
+      margin-left: 1rem;
+      margin-top: initial;
+    }
+  }
+}
+
+/* nav search */
+.nav-search {
+  position: absolute;
+  right: 0;
+  width: 18rem;
+  max-height: 50vh;
+  overflow-y: scroll;
+  background: getColour(primary);
+  padding: 1rem;
+  z-index: 1000;
+  visibility: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: getColour(secondary);
+    font-weight: normal;
+    border-bottom: 1px solid getColour(secondary);
+  }
+
+  &__icon {
+    cursor: pointer;
+    color: getColour(secondary);
+  }
+
+  &__product {
+    display: flex;
+    margin: 1rem 0rem;
+    max-width: 10rem;
+  }
+
+  &__product-title {
+    font-weight: bold;
+  }
+
+  &__product-img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+  }
+
+  &__product-info {
+    color: getColour(secondary);
+    margin-left: 1rem;
+  }
+
+  &__error {
+    color: getColour(secondary);
+    font-weight: 100;
+  }
+}

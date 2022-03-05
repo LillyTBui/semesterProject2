@@ -1,0 +1,15 @@
+.favorite-container {
+  margin: 2rem 0rem;
+
+  &__title {
+    text-align: center;
+  }
+
+  @media (min-width: 600px) {
+    justify-content: left;
+
+    &__title {
+      text-align: left;
+    }
+  }
+}

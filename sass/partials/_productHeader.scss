@@ -1,0 +1,18 @@
+.productHeader {
+  padding: 1.5rem;
+
+  &__breadcrumbs {
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+  }
+
+  &__breadcrumbs-separator {
+    margin: 0px 0.5rem;
+  }
+
+  &__breadcrumbs-link {
+    text-decoration: none;
+    color: getColour(primary);
+  }
+}

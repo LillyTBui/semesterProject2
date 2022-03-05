@@ -2,7 +2,9 @@ import { favoriteKey } from "../settings/key.js";
 import { saveToStorage, getFromStorage } from "./storage.js";
 
 export default function toggle(products) {
-  const heartIcons = document.querySelectorAll(".fa-heart");
+  const heartIcons = document.querySelectorAll(
+    ".card-icon__container .fa-heart"
+  );
 
   heartIcons.forEach(function (product) {
     product.addEventListener("click", handleClick);
@@ -18,17 +20,11 @@ export default function toggle(products) {
       return parseInt(product.id) == id;
     });
 
-    if (products.length > 0 && !checkProduct) {
+    if (!checkProduct) {
       const currentProduct = products.find((product) => product.id == id);
       if (currentProduct !== null) {
         currentFavs.push(currentProduct);
         saveToStorage(favoriteKey, currentFavs);
-      }
-    } else if (checkProduct === undefined) {
-      if (products !== null) {
-        currentFavs.push(products);
-        saveToStorage(favoriteKey, currentFavs);
-        console.log(getFromStorage(favoriteKey));
       }
     } else {
       const newList = currentFavs.filter(

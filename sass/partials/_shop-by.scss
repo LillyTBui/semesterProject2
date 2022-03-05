@@ -1,0 +1,55 @@
+.shop-by {
+  margin-bottom: 4rem;
+
+  &__title {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__overlay {
+    transition: 0.5s ease;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  &__overlay-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: getColour(primary);
+  }
+
+  &__div {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  &__div:hover &__img {
+    opacity: 0.3;
+    transition: 0.5s ease;
+  }
+
+  &__div:hover &__overlay {
+    opacity: 1;
+  }
+
+  @media (min-width: 700px) {
+    &__div {
+      max-width: 100%;
+    }
+
+    &__title {
+      text-align: left;
+    }
+  }
+}

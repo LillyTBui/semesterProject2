@@ -1,0 +1,23 @@
+.footer {
+  background-color: getColour(primary) !important;
+
+  &__subtitle {
+    color: getColour(secondary);
+  }
+
+  &__text {
+    text-decoration: none;
+    color: getColour(secondary);
+  }
+
+  &__icon-container {
+    width: 0px !important;
+  }
+
+  @media (max-width: 767px) {
+    &__row {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

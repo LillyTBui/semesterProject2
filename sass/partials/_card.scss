@@ -1,0 +1,58 @@
+.carousel {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid getColour(primary);
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__card {
+    margin: 1rem 1rem 0rem 0rem;
+  }
+}
+
+.card {
+  border: none;
+
+  &__img-top {
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: 0px;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: getColour(primary);
+  }
+
+  &__title {
+    font-size: 1em;
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+    color: getColour(primary);
+  }
+
+  &__text {
+    color: getColour(primary);
+  }
+}
+
+.card-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid getColour(primary);
+  background-color: #55525253;
+  height: 4rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}

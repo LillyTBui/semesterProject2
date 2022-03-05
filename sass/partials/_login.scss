@@ -1,0 +1,17 @@
+.user-welcome__title {
+  text-align: center;
+  margin: 2rem;
+}
+
+.add-products,
+.delete-products {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 4rem auto;
+  display: none;
+}
+
+.edit-products__div {
+  display: none;
+}

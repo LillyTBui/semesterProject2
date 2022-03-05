@@ -1,9 +1,10 @@
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./components/displayMessage.js";
 import makeCard from "./components/makeCard.js";
-import createCarousel from "./components/carousel.js";
+import createCarousel from "./components/createCarousel.js";
 import { saveToStorage } from "./utils/storage.js";
 import { maxCard } from "./settings/key.js";
+import toggle from "./utils/toggle.js";
 
 const url = baseUrl + "/home";
 
@@ -45,6 +46,7 @@ const productsUrl = baseUrl + "/products";
 
     makeCard(featuredProducts, ".product-carousel__container");
     saveToStorage(maxCard, maxProducts);
+    toggle(featuredProducts);
   } catch (error) {
     console.log(error);
     displayMessage("error", error, ".product-carousel__container");

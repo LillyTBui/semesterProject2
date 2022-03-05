@@ -1,0 +1,30 @@
+.message {
+  padding: 0.5rem;
+  border: 1px solid getColour(btn-gray);
+  color: getColour(btn-gray);
+  margin: 1rem 0rem;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: getColour(secondary);
+  background-color: getColour(btn-red);
+  border: 1px solid getColour(btn-red);
+  padding: 1rem;
+  max-height: 3rem;
+  margin-top: 1rem;
+}
+
+.warning {
+  border-color: orange;
+  color: white;
+  background: orange;
+}
+
+.success {
+  border-color: green;
+  color: white;
+  background: green;
+}

@@ -1,0 +1,46 @@
+table {
+  border: 1px solid getColour(primary);
+  border-collapse: collapse;
+}
+
+tbody,
+td,
+th {
+  padding: 1rem;
+}
+
+.table > :not(:first-child) {
+  border-top: none;
+}
+
+.shopping-cart {
+  margin: 2rem 2rem 4rem 2rem;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &__total {
+    margin-top: 2rem;
+  }
+
+  &__table {
+    max-width: 900px;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+  &__img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  @media (min-width: 500px) {
+    &__img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

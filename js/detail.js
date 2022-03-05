@@ -1,7 +1,7 @@
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./components/displayMessage.js";
 import makeCard from "./components/makeCard.js";
-import createCarousel from "./components/carousel.js";
+import createCarousel from "./components/createCarousel.js";
 import { saveToStorage, getFromStorage } from "./utils/storage.js";
 import { similarKey, favoriteKey, cartKey } from "./settings/key.js";
 import toggle from "./utils/toggle.js";
@@ -75,6 +75,37 @@ const cartArray = getFromStorage(cartKey);
         </button>
     `;
 
+    //add to favorite
+    const heartIcons = document.querySelectorAll(
+      ".product-detail__favorite .fa-heart"
+    );
+
+    heartIcons.forEach(function (product) {
+      product.addEventListener("click", handleClick);
+    });
+
+    function handleClick(event) {
+      event.target.classList.toggle("fa-solid");
+      event.target.classList.toggle("fa-regular");
+      const id = event.target.dataset.id;
+      const currentFavs = getFromStorage(favoriteKey);
+
+      const checkProduct = currentFavs.find(function (product) {
+        return parseInt(product.id) == id;
+      });
+
+      if (!checkProduct) {
+        currentFavs.push(details);
+        saveToStorage(favoriteKey, currentFavs);
+      } else {
+        const newList = currentFavs.filter(
+          (product) => product.id.toString() !== id
+        );
+        saveToStorage(favoriteKey, newList);
+      }
+    }
+
+    //add to cart
     const cartBtn = document.querySelectorAll(".product-detail__add-to-cart");
 
     cartBtn.forEach(function (btn) {
@@ -102,15 +133,13 @@ const cartArray = getFromStorage(cartKey);
         saveToStorage(cartKey, removeProduct);
       }
     }
-
-    //toggle(details);
   } catch (error) {
     console.log(error);
     displayMessage("error", error, ".detail-container");
   }
 })();
 
-/* similar products */
+/* similar products carousel */
 const productsUrl = baseUrl + "/products";
 const maxProducts = 4;
 
@@ -143,6 +172,7 @@ const maxProducts = 4;
     }
     makeCard(productsArray, ".product-carousel__container");
     saveToStorage(similarKey, maxProducts);
+    toggle(productsArray);
   } catch (error) {
     console.log(error);
     displayMessage("error", error, ".product-carousel__container");

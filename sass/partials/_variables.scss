@@ -1,0 +1,10 @@
+$colours: (
+  primary: #000000,
+  secondary: #ffffff,
+  btn-red: #c8172d,
+  btn-gray: #707070,
+);
+
+@function getColour($colour) {
+  @return map-get($colours, $colour);
+}

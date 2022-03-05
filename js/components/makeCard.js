@@ -1,4 +1,3 @@
-import { baseUrl } from "../settings/api.js";
 import { getFromStorage } from "../utils/storage.js";
 import { favoriteKey } from "../settings/key.js";
 
@@ -20,31 +19,29 @@ export default function makeCard(products, targetElement) {
         cssClass = "fa-solid";
       }
 
-      // <img
-      //   class="card-img-top"
-      //   src="${baseUrl}${product.image.formats.medium.url}"
-      //   alt="${product.title}"
-      // />;
       container.innerHTML += `
-                                      <div class="card carousel-card">
+                                      <div class="card carousel__card">
                                        <a href="detail.html?id=${product.id}">
                                         <img
-                                           class="card-img-top"
+                                           class="card-img-top card__img-top"
                                            src="${product.image_url}"
                                            alt="${product.title}"
                                         />
                                        </a>
                                        <a href="detail.html?id=${product.id}">
-                                        <div class="card-body">
-                                           <h5 class="card-title">
+                                        <div class="card-body card__body">
+                                           <h5 class="card-title card__title">
                                              ${product.title}
                                            </h5>
-                                           <p class="card-text">
+                                           <p class="card-text card__text">
                                              $${product.price}
                                             </p>
                                         </div>
                                       </a>
-                                      <i class="${cssClass} fa-heart card-icon" data-id="${product.id}"></i>
+                                      <div class="card-icon__container">
+                                      <i class="${cssClass} fa-heart card__icon" data-id="${product.id}"></i>
+                                      </div
+                                      
                                     </div>
                              `;
     });
