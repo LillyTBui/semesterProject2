@@ -36,7 +36,7 @@ git clone git@github.com:LillyTBui/semesterProject2.git
 
 ### Running
 
-Run HTML file or open HTML file in web browser
+Run HTML file from your editor.
 
 ## Contact
 
