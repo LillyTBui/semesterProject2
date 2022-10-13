@@ -4,7 +4,7 @@
 
 ## Description
 
-E-commerce website that has both customer-facing and admin sections. This website sells shoes as products.
+E-commerce website that has both customer-facing and admin sections. This website sells shoes as products and uses a provided API from Noroff. The strapi project needs to be downloaded seperately from (https://github.com/NoroffFEU/strapi-sp2).
 
 Consists of:
 
@@ -22,7 +22,7 @@ Used technologies:
 - CSS/SASS
 - Bootstrap
 - JavaScript
-- Strapi
+- Strapi 
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Used technologies:
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone git@github.com:LillyTBui/semesterProject2.git
 ```
 
 2. Install the dependencies:
