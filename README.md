@@ -61,5 +61,5 @@ Here you can detail any information you want to provide regarding contributing t
 
 ## Contact
 
-[My LinkedIn page](www.linkedin.com)
+[My LinkedIn page](https://www.linkedin.com/in/lilly-thi-bui-479920233/)
 
