@@ -34,19 +34,9 @@ Used technologies:
 git clone git@github.com:LillyTBui/semesterProject2.git
 ```
 
-2. Install the dependencies:
-
-```
-npm install
-```
-
 ### Running
 
-To run the app, run the following commands:
-
-```bash
-npm run start
-```
+Run HTML file or open HTML file in web browser
 
 ## Contact
 
